@@ -18,16 +18,17 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class InterfazeImpl implements Interfaz{
-     @Override
+    
+    @Override
     public String getResult(String num){
-        URL restApi = null;
+        URL rest = null;
         String res = "";
         try {
-            restApi = new URL("https://pure-escarpment-60633.herokuapp.com/cuadrado/"+num);
+            rest = new URL("https://pure-escarpment-60633.herokuapp.com/cuadrado/"+num);
         } catch (MalformedURLException ex) {
             Logger.getLogger(InterfazeImpl.class.getName()).log(Level.SEVERE, null, ex);
         }
-        try (BufferedReader reader = new BufferedReader(new InputStreamReader(restApi.openStream()))) {
+        try (BufferedReader reader = new BufferedReader(new InputStreamReader(rest.openStream()))) {
             String inputLine = null;
             while ((inputLine = reader.readLine()) != null) {
                 res += inputLine;

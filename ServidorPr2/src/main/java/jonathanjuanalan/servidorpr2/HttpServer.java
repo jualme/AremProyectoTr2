@@ -22,7 +22,8 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.core.io.Resource;
 
 public class HttpServer implements Runnable {
-   private ServerSocket socket;
+    
+    private ServerSocket socket;
     private Intermediary inter;
     
 
@@ -51,10 +52,8 @@ public class HttpServer implements Runnable {
             System.exit(1);
         }
         BufferedReader in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
-        PrintWriter out = new PrintWriter(clientSocket.getOutputStream(), true);
-        
-        String inputLine, outputLine;
-        
+        PrintWriter out = new PrintWriter(clientSocket.getOutputStream(), true);        
+        String inputLine, outputLine;        
         while ((inputLine = in.readLine()) != null) {
             System.out.println("Received: " + inputLine);
             if(inputLine.startsWith("GET")){
@@ -82,24 +81,17 @@ public class HttpServer implements Runnable {
                    
                     outputLine = "HTTP/1.1 200 OK\r\n"
                     + "Content-Type: text/html\r\n\r\n"                                        
-                    + inter.getRespuesta(String.valueOf(path.split("/")[2]));
-                    
-                    out.println(outputLine);
-                    
-                    
+                    + inter.getRespuesta(String.valueOf(path.split("/")[2]));                    
+                    out.println(outputLine);                                        
                 }
-            }
-            
+            }            
             if (!in.ready()) {
                 break;
-            }
-            
+            }            
             if (inputLine.equals("")) break;
-        }
-        
+        }        
         out.close();
         in.close();
         clientSocket.close();
-    }
-     
+    }     
 }

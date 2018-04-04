@@ -6,37 +6,21 @@ and open the template in the editor.
 -->
 <html>
     <head>
-        <title>Proyecto Arem Servidor</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Proyecto Arem Servidor</title>        
     </head>
-    <body>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="well well-sm">
-                        <form class="form-horizontal">
-                            <fieldset>
-                                <legend class="text-center header">Formulario</legend>
-
-                                <div class="form-group">
-                                    <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
-                                    <div class="col-md-8">
-                                        <input id="num" name="num" type="number" placeholder="Ingrese el número" class="form-control">
-                                    </div>
-                                </div>                        
-
-                                <input type="submit" value="Submit" class="btn btn-primary btn-lg" onclick='this.form.action="/cuadrado/"+ document.getElementById("num").value;'>
-
-
-                            </fieldset>
-                        </form>
+    <body  bgcolor='wheat'>	       
+        <form class="form-horizontal">			
+            <fieldset>
+                <h2> Cuadrado </h2>
+                <div class="form-group">
+                    <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
+                    <div class="col-md-8">
+                        Numero : <input id="num" name="num" type="number" class="form-control">
                     </div>
-                </div>
-            </div>
-        </div>
-
+                </div>  
+                <h2> </h2>
+                <input type="submit" value="enviar" class="btn btn-primary btn-lg" onclick='this.form.action="/cuadrado/"+ document.getElementById("num").value;'>
+            </fieldset>
+        </form>
     </body>
-
-
 </html>
