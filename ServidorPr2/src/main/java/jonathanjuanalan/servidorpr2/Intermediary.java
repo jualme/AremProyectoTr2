@@ -7,7 +7,7 @@ package jonathanjuanalan.servidorpr2;
 
 /**
  *
- * @author 2108616
+ * @author 2118270
  */
 public interface Intermediary {
     String getRespuesta(String num);

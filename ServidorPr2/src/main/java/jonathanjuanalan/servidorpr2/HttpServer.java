@@ -7,7 +7,7 @@ package jonathanjuanalan.servidorpr2;
 
 /**
  *
- * @author 2108616
+ * @author 2118270
  */
 import java.io.BufferedReader;
 import java.io.IOException;

@@ -7,7 +7,7 @@ package jonathanjuanalan.servidorpr2;
 
 /**
  *
- * @author Juancho
+ * @author 2118270
  */
 
 import org.springframework.beans.factory.annotation.Autowired;

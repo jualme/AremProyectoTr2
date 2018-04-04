@@ -7,7 +7,7 @@ package jonathanjuanalan.servidorpr2;
 
 /**
  *
- * @author Juancho
+ * @author 2118270
  */
 
 import java.io.*;

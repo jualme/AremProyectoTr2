@@ -7,7 +7,7 @@ package jonathanjuanalan.servidorpr2;
 
 /**
  *
- * @author Juancho
+ * @author 2118270s
  */
 public interface Interfaz {
     String getResult(String num);
