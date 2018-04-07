@@ -10,5 +10,5 @@ package jonathanjuanalan.servidorpr2;
  * @author 2118270
  */
 public interface Intermediary {
-    String getRespuesta(String num);
+    String getRespuesta(String num, Class clase);
 }

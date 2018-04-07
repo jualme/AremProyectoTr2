@@ -14,16 +14,20 @@ import java.io.IOException;
 import java.net.ServerSocket;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 
 public class Main {
     public static void main(String[] args) throws IOException {
-        ServerSocket serverSocket = new ServerSocket(8080);
-        ExecutorService executor = Executors.newFixedThreadPool(1);        
-        ApplicationContext apliacion = new ClassPathXmlApplicationContext("applicationContext.xml");        
-        Intermediary intermediario = apliacion.getBean(IntermediaryImpl.class);        
-        executor.execute(new HttpServer(serverSocket, intermediario));         
+        ServerSocket serverSocket = null;
+        try { 
+            serverSocket = new ServerSocket(8080);
+            ExecutorService executor = Executors.newFixedThreadPool(1); 
+            Intermediary intermediario = new IntermediaryImpl();
+            executor.execute(new HttpServer(serverSocket,intermediario));
+        } catch (IOException e) {
+            System.err.println("Could not listen on port.");
+            System.exit(1);
+        }  
+             
     }  
 }

@@ -5,10 +5,12 @@
  */
 package jonathanjuanalan.servidorpr2;
 
+
+
 /**
  *
  * @author 2118270
  */
 public interface Interfaz {
-    String getResult(String num);
+    String getURLResult(String num);
 }
